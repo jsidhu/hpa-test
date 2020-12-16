@@ -1,0 +1,41 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  annotations:
+    fluxcd.io/sync-checksum: bfb1ba06c55e0dd511f1bc50fd75a0a3170206e0
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"helm.fluxcd.io/v1","kind":"HelmRelease","metadata":{"annotations":{"fluxcd.io/sync-checksum":"bfb1ba06c55e0dd511f1bc50fd75a0a3170206e0"},"labels":{"fluxcd.io/sync-gc-mark":"sha256.n9xSaOqiPf5Xhmg_nPILOyy28dNZyjfmHA4CBr8LX2w"},"name":"metrics-server","namespace":"monitoring-system"},"spec":{"chart":{"name":"metrics-server","repository":"https://kubernetes-charts.storage.googleapis.com/","version":"2.8.8"},"releaseName":"metrics-server","values":{"args":["--kubelet-preferred-address-types=InternalIP"]}}}
+  creationTimestamp: "2020-12-16T18:48:40Z"
+  generation: 1
+  labels:
+    fluxcd.io/sync-gc-mark: sha256.n9xSaOqiPf5Xhmg_nPILOyy28dNZyjfmHA4CBr8LX2w
+  name: metrics-server
+  namespace: monitoring-system
+  resourceVersion: "17129"
+  selfLink: /apis/helm.fluxcd.io/v1/namespaces/monitoring-system/helmreleases/metrics-server
+  uid: c6d77fd2-e727-485c-ba2d-72e384771c75
+spec:
+  chart:
+    name: metrics-server
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    version: 2.8.8
+  releaseName: metrics-server
+  values:
+    args:
+    - --kubelet-preferred-address-types=InternalIP
+status:
+  conditions:
+  - lastTransitionTime: "2020-12-16T18:48:51Z"
+    lastUpdateTime: "2020-12-16T19:41:07Z"
+    message: Chart fetch was successful for Helm release 'metrics-server' in 'monitoring-system'.
+    reason: ChartFetched
+    status: "True"
+    type: ChartFetched
+  - lastTransitionTime: "2020-12-16T18:48:51Z"
+    lastUpdateTime: "2020-12-16T19:41:07Z"
+    message: Release failed for Helm release 'metrics-server' in 'monitoring-system'.
+    reason: Failed
+    status: "False"
+    type: Released
+  observedGeneration: 1
+  phase: Failed
